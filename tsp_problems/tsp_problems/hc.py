@@ -4,9 +4,6 @@ import copy
 from route import Route
 from tabu import TabuList
 
-def max_2opt(list_2opt):
-    return max(range(len(list_2opt)), key=list_2opt.__getitem__)
-
 def best_sol(list_sol):
     return min(range(len(list_sol)), key=list_sol.__getitem__)
 
@@ -14,18 +11,24 @@ def hc(points, data = None):
     r = Route(points, data)
     steps = 0
 
-    while True:
-        list_2opt = r.list_2opt()
+    improvement = True
+    while improvement:
+        improvement = False
+        for i in range(len(points) - 1):
+            for k in range(i + 1, len(points) - 1):
+                new_route = r.swap_at(i, k)
+                new_distance = r.distance(new_route)
 
-        max_idx = max_2opt(list_2opt)
-        max_value = list_2opt[max_idx]
-        if max_value <= 0:
-            break
-        else:
-            r.swap_at(max_idx)
-            steps += 1
+                if new_distance < r.dist:
+                    r.set_route(new_route, new_distance)
+                    steps += 1
+                    improvement = True
+                    break
+
+            if improvement:
+                break
     
-    return [r.distance(), r.data, steps]
+    return [r.dist, r.data, steps]
 
 def hc_tabu(points, data = None):
     r = Route(points, data)
@@ -33,29 +36,31 @@ def hc_tabu(points, data = None):
     sideways = 100
     steps = 0
 
-    while True:
-        list_2opt = r.list_2opt()
+    improvement = True
+    while improvement:
+        improvement = False
+        for i in range(len(points) - 1):
+            for k in range(i + 1, len(points) - 1):
+                new_route = r.swap_at(i, k)
+                new_distance = r.distance(new_route)
 
-        max_idx = max_2opt(list_2opt)
-        max_value = list_2opt[max_idx]
+                if new_distance < r.dist:
+                    r.set_route(new_route, new_distance)
+                    steps += 1
+                    improvement = True
+                    sideways = 100
+                    break
+                elif new_distance < (r.dist + 0.001):
+                    if (sideways != 0 and tabu.check_and_add(new_route)):
+                        r.set_route(new_route, new_distance)
+                        steps += 1
+                        improvement = True
+                        sideways -= 1
 
-        if max_value < -0.00001 :
-            break
-        elif abs(max_value) < 0.00001:
-            r.swap_at(max_idx)
-            
-            if (sideways == 0 or tabu.check_and_add(r.data)):
-                r.swap_at(max_idx)
+            if improvement:
                 break
-            
-            steps += 1
-            sideways -= 1
-        else:
-            r.swap_at(max_idx)
-            steps += 1
-            sideways = 100
     
-    return [r.distance(), r.data, steps]
+    return [r.dist, r.data, steps]
 
 def hc_random_restart(points, max_restarts):
     list_sol = []

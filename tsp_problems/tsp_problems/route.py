@@ -40,15 +40,16 @@ class Route():
         else:
             self.data = [point[0] for point in points[1:]]
             random.shuffle(self.data)
+        self.dist = self.distance(self.data)
 
-    def distance(self):
+    def distance(self, data):
         total_dist = 0
 
-        first_path = 'A' + str(self.data[0])
+        first_path = 'A' + str(data[0])
         total_dist += self.dict_dist[first_path]
 
-        from_city = str(self.data[0])
-        for to_city in self.data[1:]:
+        from_city = str(data[0])
+        for to_city in data[1:]:
             name = edge_name(from_city, to_city)
             total_dist += self.dict_dist[name]
             from_city = to_city
@@ -58,50 +59,20 @@ class Route():
 
         return total_dist
 
-    def list_2opt(self):
-        list_2opt = []
+    def get_distance(self):
+        return self.dist
 
-        prev_city = 'A'
-        from_city = str(self.data[0])
-        to_city = str(self.data[1])
-        next_city = str(self.data[2])
+    def swap_at(self, i, k):
+        new_route = self.data[0:i]
+        new_route.extend(reversed(self.data[i:k+1]))
+        new_route.extend(self.data[k+1:])
 
-        o_dist = self.dict_dist[prev_city + from_city]
-        o_dist += self.dict_dist[edge_name(to_city, next_city)]
-        n_dist = self.dict_dist[prev_city + to_city]
-        n_dist += self.dict_dist[edge_name(from_city, next_city)]
-        list_2opt.append(o_dist - n_dist)
+        return new_route
 
-        prev_city = from_city
-        for idx in range(1, len(self.data) - 2):
-            from_city = self.data[idx]
-            to_city = self.data[idx + 1]
-            next_city = self.data[idx + 2]
-            
-            o_dist = self.dict_dist[edge_name(prev_city, from_city)]
-            o_dist += self.dict_dist[edge_name(to_city, next_city)]
-            n_dist = self.dict_dist[edge_name(prev_city, to_city)]
-            n_dist += self.dict_dist[edge_name(from_city, next_city)]
-            list_2opt.append(o_dist - n_dist)
+    def set_route(self, new_route, distance):
+        self.data = new_route
+        self.dist = distance
 
-            prev_city = from_city
-
-        from_city = str(self.data[-2])
-        to_city = str(self.data[-1])
-        next_city = 'A'
-
-        o_dist = self.dict_dist[edge_name(prev_city, from_city)]
-        o_dist += self.dict_dist[next_city + to_city]
-        n_dist = self.dict_dist[edge_name(prev_city, to_city)]
-        n_dist += self.dict_dist[next_city + from_city]
-        list_2opt.append(o_dist - n_dist)
-
-        return list_2opt
-
-    def swap_at(self, idx):
-        temp = self.data[idx]
-        self.data[idx] = self.data[idx + 1]
-        self.data[idx + 1] = temp 
         
 if __name__ ==  "__main__":
 
@@ -109,18 +80,8 @@ if __name__ ==  "__main__":
     route = Route(points)
     print(route.data)
 
-    old_d = route.distance()
-    list_2opt = route.list_2opt()
+    old_d = route.distance(route.data)
     
-    for idx in range(len(list_2opt)):
-
-        route.swap_at(idx)
-        print(route.data)
-        new_d = route.distance()
-        if abs(old_d - new_d) > abs(list_2opt[idx]) + 0.00001:
-            print(abs(old_d - new_d), abs(list_2opt[idx]) + 0.00001)
-            print("Error")
-        route.swap_at(idx)
         
 
 
