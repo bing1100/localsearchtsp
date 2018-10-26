@@ -22,6 +22,7 @@ def parsefile_p36():
 
     return parsed
 
+# Parse the optimal solutions
 def parsefile_opt():
     file_name = "tsp_opt_solution.txt"
     f = open(file_name, 'r')
@@ -31,6 +32,7 @@ def parsefile_opt():
     
     return parsed
 
+# Unit Tests
 if __name__ == '__main__':
     print(parsefile(14, 5))
     print(parsefile_p36())

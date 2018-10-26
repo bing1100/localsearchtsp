@@ -1,13 +1,19 @@
 from queue import *
 
+# TabuList implementation
 class TabuList():
+
+    # Initial TabuList elements
     def __init__(self, max_num_vals):
         self.que = Queue(max_num_vals)
         self.dict = dict()
 
+    # Check if a neighbour is already in the tabu list
     def check_in(self, key):
         return ''.join(key) in self.dict
 
+    # Check if a neighbour is already in the tabu list,
+    #  if not add it to the tabu list
     def check_and_add(self, key):
         if self.check_in(key):
             return True
@@ -23,6 +29,7 @@ class TabuList():
 
         return False
 
+# Unit Tests
 if __name__ == "__main__":
     tabu = TabuList(5)
     tabu.check_and_add(["A"])

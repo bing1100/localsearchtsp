@@ -1,0 +1,177 @@
+=====
+Printing linear Averages
+=====
+Number of cities:  14
+Instance:  1
+Average solution quality (%% of best):  117.96544185790947
+Average steps:  3199.0
+Percentage of solutions optimal:  24
+=====
+Number of cities:  14
+Instance:  2
+Average solution quality (%% of best):  119.65070318658896
+Average steps:  3199.0
+Percentage of solutions optimal:  31
+=====
+//== Overall ==//
+Number of cities:  14
+Average solution quality (%% of best):  118.8080725222492
+Average steps:  3199.0
+Percentage of solutions optimal:  27.500000000000004
+=====
+Number of cities:  15
+Instance:  1
+Average solution quality (%% of best):  115.01149545403148
+Average steps:  3199.0
+Percentage of solutions optimal:  7
+=====
+Number of cities:  15
+Instance:  2
+Average solution quality (%% of best):  115.22915622776578
+Average steps:  3199.0
+Percentage of solutions optimal:  28
+=====
+//== Overall ==//
+Number of cities:  15
+Average solution quality (%% of best):  115.12032584089864
+Average steps:  3199.0
+Percentage of solutions optimal:  17.5
+=====
+Number of cities:  16
+Instance:  1
+Average solution quality (%% of best):  110.32611299874954
+Average steps:  3199.0
+Percentage of solutions optimal:  1
+=====
+Number of cities:  16
+Instance:  2
+Average solution quality (%% of best):  122.88690184309178
+Average steps:  3199.0
+Percentage of solutions optimal:  6
+=====
+//== Overall ==//
+Number of cities:  16
+Average solution quality (%% of best):  116.60650742092065
+Average steps:  3199.0
+Percentage of solutions optimal:  3.4999999999999996
+=====
+Raw data format: 
+[[1.188080725222492, 3199.0, 0.275], [1.1512032584089864, 3199.0, 0.17500000000000002], [1.1660650742092065, 3199.0, 0.034999999999999996]]
+=====
+Printing exp Averages
+=====
+Number of cities:  14
+Instance:  1
+Average solution quality (%% of best):  115.65541452716728
+Average steps:  3199.0
+Percentage of solutions optimal:  24
+=====
+Number of cities:  14
+Instance:  2
+Average solution quality (%% of best):  119.98673225811596
+Average steps:  3199.0
+Percentage of solutions optimal:  37
+=====
+//== Overall ==//
+Number of cities:  14
+Average solution quality (%% of best):  117.82107339264161
+Average steps:  3199.0
+Percentage of solutions optimal:  30.5
+=====
+Number of cities:  15
+Instance:  1
+Average solution quality (%% of best):  112.10636532764867
+Average steps:  3199.0
+Percentage of solutions optimal:  6
+=====
+Number of cities:  15
+Instance:  2
+Average solution quality (%% of best):  115.62564930295822
+Average steps:  3199.0
+Percentage of solutions optimal:  17
+=====
+//== Overall ==//
+Number of cities:  15
+Average solution quality (%% of best):  113.86600731530345
+Average steps:  3199.0
+Percentage of solutions optimal:  11.5
+=====
+Number of cities:  16
+Instance:  1
+Average solution quality (%% of best):  111.4526164089101
+Average steps:  3199.0
+Percentage of solutions optimal:  0
+=====
+Number of cities:  16
+Instance:  2
+Average solution quality (%% of best):  120.19324076586523
+Average steps:  3199.0
+Percentage of solutions optimal:  10
+=====
+//== Overall ==//
+Number of cities:  16
+Average solution quality (%% of best):  115.82292858738765
+Average steps:  3199.0
+Percentage of solutions optimal:  5.0
+=====
+Raw data format: 
+[[1.178210733926416, 3199.0, 0.305], [1.1386600731530345, 3199.0, 0.115], [1.1582292858738765, 3199.0, 0.05]]
+=====
+Printing Boltzman Averages
+=====
+Number of cities:  14
+Instance:  1
+Average solution quality (%% of best):  111.98110380334496
+Average steps:  22028.0
+Percentage of solutions optimal:  30
+=====
+Number of cities:  14
+Instance:  2
+Average solution quality (%% of best):  116.6028649525444
+Average steps:  22028.0
+Percentage of solutions optimal:  35
+=====
+//== Overall ==//
+Number of cities:  14
+Average solution quality (%% of best):  114.29198437794467
+Average steps:  22028.0
+Percentage of solutions optimal:  32.49999999999999
+=====
+Number of cities:  15
+Instance:  1
+Average solution quality (%% of best):  114.3363589783281
+Average steps:  22028.0
+Percentage of solutions optimal:  7
+=====
+Number of cities:  15
+Instance:  2
+Average solution quality (%% of best):  115.98644918981861
+Average steps:  22028.0
+Percentage of solutions optimal:  19
+=====
+//== Overall ==//
+Number of cities:  15
+Average solution quality (%% of best):  115.16140408407335
+Average steps:  22028.0
+Percentage of solutions optimal:  13.0
+=====
+Number of cities:  16
+Instance:  1
+Average solution quality (%% of best):  110.99837157198485
+Average steps:  22028.0
+Percentage of solutions optimal:  5
+=====
+Number of cities:  16
+Instance:  2
+Average solution quality (%% of best):  120.05935502746293
+Average steps:  22028.0
+Percentage of solutions optimal:  12
+=====
+//== Overall ==//
+Number of cities:  16
+Average solution quality (%% of best):  115.52886329972387
+Average steps:  22028.0
+Percentage of solutions optimal:  8.5
+=====
+Raw data format: 
+[[1.1429198437794468, 22028.0, 0.32499999999999996], [1.1516140408407336, 22028.0, 0.13], [1.1552886329972387, 22028.0, 0.08499999999999999]]

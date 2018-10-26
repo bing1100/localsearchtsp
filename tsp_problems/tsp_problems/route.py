@@ -31,21 +31,29 @@ def create_dict_dist(points):
             dict_edges[''.join(dist[1])] = dist[0]
     return dict_edges
 
-
+# A Route class that stores all the data for the Route
 class Route():
+
+    # Initialize the route either with predefined initial route or a set of points
     def __init__(self, points, data = None):
+        # Create a dictionary of edge costs from the points
         self.dict_dist = create_dict_dist(points)
+
+        # Set the initial route data 
         if data != None:
-            self.data = data
+            self.data = data # predefined initial route
         else:
             self.data = [point[0] for point in points[1:]]
-            random.shuffle(self.data)
+            random.shuffle(self.data) # randomized initial route
+
+        # Set the initial distance
         self.dist = self.distance(self.data)
 
+    # Calculate the total distance for the route 
     def distance(self, data):
         total_dist = 0
 
-        first_path = 'A' + str(data[0])
+        first_path = edge_name(["A"], data)
         total_dist += self.dict_dist[first_path]
 
         from_city = str(data[0])
@@ -54,14 +62,16 @@ class Route():
             total_dist += self.dict_dist[name]
             from_city = to_city
         
-        last_path = 'A' + from_city
+        last_path = edge_name(["A"], from_city)
         total_dist += self.dict_dist[last_path]
 
         return total_dist
 
+    # Get the distance for the current route
     def get_distance(self):
         return self.dist
 
+    # Create a new route with a 2opt swap from i to k
     def swap_at(self, i, k):
         new_route = self.data[0:i]
         new_route.extend(reversed(self.data[i:k+1]))
@@ -69,11 +79,12 @@ class Route():
 
         return new_route
 
+    # Set the new route data and distance
     def set_route(self, new_route, distance):
         self.data = new_route
         self.dist = distance
 
-        
+# Unit tests
 if __name__ ==  "__main__":
 
     points = generatedata.parsefile(14,5)

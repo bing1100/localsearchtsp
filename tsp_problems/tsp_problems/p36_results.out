@@ -1,0 +1,32 @@
+=====
+Test the 36 city Problem: 
+=====
+Hill Climbing: 
+Sol cost:  488.33690828707927
+Sol route:  ['K', 'W', 'J', 'Q', 'Z', 'X', 'V', 'B', 'G', '9', 'P', 'O', '3', 'E', 'C', '2', 'U', 'S', 'F', 'H', '6', '4', 'R', 'M', '0', '5', 'T', 'I', '8', '7', 'Y', 'L', 'D', 'N', '1']
+Num Steps:  100
+Time Elapsed:  0.2850008010864258
+=====
+Hill Climbing (10 restarts): 
+Sol cost:  465.7624777311007
+Sol route:  ['K', 'W', 'J', 'Q', 'Z', 'P', 'O', '3', 'E', 'C', '2', 'U', 'S', 'F', '4', 'R', 'M', '6', 'H', '9', 'B', 'G', '0', '5', 'T', 'Y', 'I', '8', '7', 'L', 'D', 'V', 'X', 'N', '1']
+Num Steps:  89
+Time Elapsed:  3.4167320728302
+=====
+Linear Annealing: 
+Sol cost:  761.0615013753571
+Sol route:  ['Q', 'W', 'K', 'J', 'P', '3', 'E', 'Z', 'C', '2', 'S', 'U', 'F', '6', 'H', 'V', 'X', 'G', 'D', 'Y', 'I', '7', '8', 'L', 'T', '5', '0', '4', 'R', 'M', '9', 'B', 'O', 'N', '1']
+Num Steps:  3199
+Time Elapsed:  0.0955195426940918
+=====
+EXP Annealing: 
+Sol cost:  727.3336132354077
+Sol route:  ['E', '2', 'C', '3', 'P', '6', 'F', 'U', 'O', 'Z', '1', 'N', 'V', 'X', '5', '0', 'M', 'R', '4', 'S', 'B', '9', 'H', 'G', 'T', 'I', '8', '7', 'Y', 'L', 'D', 'Q', 'J', 'W', 'K']
+Num Steps:  3199
+Time Elapsed:  0.0971367359161377
+=====
+Boltzman Annealing: 
+Sol cost:  548.184664449928
+Sol route:  ['1', 'N', 'D', 'X', 'V', '8', '7', 'I', 'Y', 'L', 'T', '5', '0', 'G', 'H', '6', 'M', 'R', '4', 'F', '9', 'B', 'S', 'U', 'P', '2', 'C', 'O', '3', 'E', 'Z', 'Q', 'J', 'W', 'K']
+Num Steps:  22028
+Time Elapsed:  0.6961205005645752
